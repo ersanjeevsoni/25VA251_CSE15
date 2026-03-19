@@ -133,6 +133,61 @@ userData();
         }
        }
        productDetail();
+       
+
+       //IIFE:-  is a JavaScript function that runs as soon as it is defined
+       (function(){
+        console.log("hello IIFE");
+       })();
+       //short code for above function
+       (msg=>console.log("IIFE"))();
+       console.log(typeof(msg));
+
+       //Local Storage:-JavaScript localStorage is a feature that enables websites to store persistent, key-value data in a user's browser, with no expiration time. Data stored in localStorage remains available even after the browser is closed and reopened.
+
+       let myInfo={
+        name:'John',
+        age:34,
+        mob:6797676,
+        eMail:"john34@gmail.com",
+        address:"GZB"
+       };
+       //convert object into JSON string
+       let myInfoData=JSON.stringify(myInfo);
+
+    //set the data
+    localStorage.setItem('prefrences',myInfoData);
+
+  //get data (retreive the data)
+    let myPrefrence=localStorage.getItem('prefrences');
+
+    //convert into JSON Object
+    let myInfoPre=JSON.parse(myPrefrence);
+
+    //access keys
+    console.log(myInfoPre.name);
+
+    //High order function:- Higher-order functions help make your code more reusable and modular by allowing you to work with functions like any other value
+
+    //map() Creates a new array by applying a function to every element in the original array.
+
+    let num=[3,5,4,6,67,4,3,6,8,9];
+   let result=num.map(n=>n*2);
+   console.log(result);
+
+   //reduce.. Accumulates the array elements into a single value by repeatedly applying a function to each element and the running total.
+   let sum=num.reduce((total,n)=>total+n);
+   console.log(sum); //115
+
+   //filter:- Creates a new array with only the elements that pass a test implemented by the provided function.
+   let sorting=num.filter(n=>n>3);
+   console.log(sorting);
+
+   //forEach:- Executes a provided function once for each array element, typically for side effects like logging, and does not return a new array.
+
+   num.forEach((n)=>console.log(n*n));
+console.log(`updated array is ${num}`);
+
     </script>
 </body>
 </html>
